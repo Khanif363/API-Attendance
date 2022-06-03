@@ -14,17 +14,17 @@ class PasswordController extends Controller
             if(!Hash::check($request->password, $request->user()->password)) {
                 $request->user()->update(['password' => Hash::make($request->password)]);
                     return response()->json([
-                        'message' => 'Password updated successfully'
+                        'message'       => 'Password updated successfully'
                     ], Response::HTTP_OK);
             } else {
                 return response()->json([
-                    'message' => 'New password cannot be the same as the old one.'
+                    'message'           => 'New password cannot be the same as the old one.'
                 ], Response::HTTP_UNPROCESSABLE_ENTITY);
             }
         }
 
         return response()->json([
-            'message' => 'Password update failed'
+            'message'           => 'Password update failed'
         ], Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 }
