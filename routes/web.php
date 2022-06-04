@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\{HomeController, UserController, AttendanceController};
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +24,7 @@ Route::get('/attendance', function () {
 
 Auth::routes();
 
-Route::get('dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');
 
 Route::resource('user', UserController::class)->middleware('auth');
 Route::resource('attendance', AttendanceController::class)->middleware('auth');
