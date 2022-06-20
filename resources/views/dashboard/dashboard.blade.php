@@ -7,7 +7,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Codepolitan Attendance</title>
+    <title>Attendance - Admin Dashboard</title>
+
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap5.2/css/bootstrap.min.css') }}">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
@@ -30,10 +32,10 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="index3.html" class="brand-link">
-        <img src="{{ asset('assets/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      <a href="/" class="brand-link">
+        <img src="{{ asset('assets/dist/img/logo_live_attendance.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
              style="opacity: .8">
-        <span class="brand-text font-weight-light">AttLive</span>
+        <span class="brand-text font-weight-light">Attendance</span>
       </a>
 
       <!-- Sidebar -->
@@ -47,10 +49,10 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-      <strong>Copyright &copy; 2022 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+      <strong>Copyright &copy; 2022 <a href="http://adminlte.io">Finall Project</a>.</strong>
       All rights reserved.
       <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 3.0.5
+        <b>Version</b> latest
       </div>
     </footer>
 

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -69,5 +69,34 @@
             </div>
         </div>
     </div>
+</div> --}}
+
+
+
+<div class="loginBox"> <img class="user" src="{{ asset('assets/dist/img/profile.png') }}" height="100px" width="100px">
+    <h3>{{ __('Login') }}</h3>
+    <form method="POST" action="{{ route('login') }}">
+        @csrf
+        <div class="">
+            <input id="name" class="form-control @error('email') is-invalid @enderror" name="email" type="text" placeholder="Email" required autocomplete="email" autofocus>
+            @error('email')
+                <span class="invalid-feedback text-danger" role="alert">
+                    {{ $message }}
+                </span>
+            @enderror
+            <input id="password" class="form-control mt-3 @error('password') is-invalid @enderror" name="password" type="password" placeholder="Password" required autocomplete="current-password">
+            @error('password')
+                <span class="invalid-feedback text-danger" role="alert">
+                    {{ $message }}
+                </span>
+            @enderror
+        </div>
+            <input type="submit" class="mt-4" name="" value="Login">
+    </form>
+    {{-- <a href="#">Forget Password<br></a> --}}
+    <div class="text-center mt-4">
+        <a href="{{ route('register') }}" style="color: #59238F;">Register</a>
+    </div>
+
 </div>
 @endsection

@@ -4,11 +4,14 @@ namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PasswordRequest;
+use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 
 class PasswordController extends Controller
 {
+    use SendsPasswordResetEmails;
+
     public function reset(PasswordRequest $request) {
         if(Hash::check($request->password_old, $request->user()->password)) {
             if(!Hash::check($request->password, $request->user()->password)) {

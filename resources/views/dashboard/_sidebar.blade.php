@@ -2,7 +2,7 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-            <img src="https://avatars.dicebear.com/api/bottts/example.svg?options%5Bcolors%5D%5B%5D=cyan"
+            <img src="{{ asset('assets/dist/img/profile.png') }}"
                 class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
@@ -16,13 +16,14 @@
             <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
             <li class="nav-item">
-                <a href="{{ url('/dashboard') }}" class="nav-link active">
+                <a href="{{ url('/dashboard') }}" class="nav-link">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
                         Dashboard
                     </p>
                 </a>
             </li>
+            @if (Auth::user()->is_admin)
             <li class="nav-item">
                 <a href="{{ url('/attendance') }}" class="nav-link">
                     <i class="nav-icon far fa-calendar-alt"></i>
@@ -39,6 +40,7 @@
                     </p>
                 </a>
             </li>
+            @endif
             <li class="nav-header">LABELS</li>
             <li class="nav-item">
                 <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
